@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ff1493">
+    <title>Tips y Recetas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="arriba">
+     <!--header-->
+    <header>
+        <span><img src="logos de la tienda/logo.png" alt="logo"></span>
+
+        <!-- Checkbox oculto que guardará el estado (abierto/cerrado) -->
+        <input type="checkbox" id="btn-menu">
+
+        <!-- Botón que activa el checkbox (icono de 3 rayas / hamburguesa) -->
+        <label for="btn-menu" class="btn-menu" aria-label="Abrir o cerrar el menú">☰</label>
+
+        <!-- Enlaces del menú -->
+        <nav class="menu" aria-label="Menú principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo de Productos</a></li>
+                <li><a class="activo" aria-current="page" href="tips-y-recetas.html">Tips y Recetas</a></li>
+                <li><a href="interaccion.html">Interacción</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Capa que cierra el menú al tocar fuera de él (solo celular) -->
+        <label for="btn-menu" class="menu-fondo" aria-hidden="true"></label>
+    </header>
+
+
+     <!--tips y recetas-->
+    <div id="Recetas">
+        <h2>Tips</h2>
+        <center>
+        <div class="tips">
+            <details class="tip">
+                <summary>
+                   <span class="tips-texto"><h3>Medición, Preparación y Precalentamiento.</h3></span>
+                </summary>
+
+                <ul>
+                    <li>
+                        <strong>Precisión con balanza:</strong> Usa una balanza digital para pesar los ingredientes en gramos. La repostería es una ciencia exacta y el tanteo con tazas suele alterar el resultado.
+                    </li>
+                    <li>
+                        <strong>Temperatura ambiente:</strong> Saca la mantequilla, huevos y leche unos 30 minutos antes de comenzar. Si están a la misma temperatura, la emulsión queda homogénea y no se corta.
+                    </li>
+                    <li>
+                        <strong>Tamizado de ingredientes secos:</strong> Pasa la harina, el cacao y el polvo de hornear por un colador o cernidor fino para eliminar grumos e incorporar aire a la mezcla.
+                    </li>
+                    <li>
+                        <strong>Precalentado obligatorio:</strong> Enciende el horno de 10 a 15 minutos antes de introducir la bandeja. Hornear con el horno frío arruina el leudado de la masa.
+                    </li>
+                </ul>
+            </details>
+
+            <details class="tip">
+                <summary>
+                    <span class="tips-texto"><h3>Técnicas de Mezclado, Horneado y Control de Masa.</h3></span>
+                </summary>
+                <ul>
+                    <li>
+                        <strong>Harina leudante vs. todo uso:</strong> Si usas harina todo uso (sin leudante), agrega 1 cucharadita y media de polvo de hornear por cada taza de harina para lograr el mismo crecimiento.
+                    </li>
+                    <li>
+                        <strong>Manejo del gluten:</strong> No batas de más una vez agregada la harina; mezclar en exceso activa el gluten y endurece la preparación.
+                    </li>
+                    <li>
+                        <strong>Evitar que chispas o frutos caigan al fondo:</strong> Pasa las chispas de chocolate, pasas o frutos secos por un poco de harina antes de agregarlos a la mezcla para que se mantengan distribuidos.
+                    </li>
+                    <li>
+                        <strong>Torta plana sin barriga:</strong> Si tus tortas suelen subir demasiado en el centro, envuelve el molde por fuera con una tira de tela húmeda antes de meterlo al horno.
+                    </li>
+                    <li>
+                        <strong>Distribución del calor y puerta del horno:</strong> Ubica el molde en el centro del horno y no abras la puerta durante los primeros 20 a 25 minutos para evitar caídas bruscas de temperatura.
+                    </li>
+                </ul>
+            </details>
+
+            <details class="tip">
+                <summary>
+                    <span class="tips-texto"><h3>Sabor, Aroma y Conservación.</h3></span>
+                </summary>
+                <ul>
+                    <li>
+                        <strong>Potenciar el sabor del chocolate:</strong> Añade una pizca de café instantáneo a las mezclas de chocolate. No aportará sabor a café, pero realzará el cacao de forma increíble.
+                    </li>
+                    <li>
+                        <strong>Fijación de esencias:</strong> Agrega las esencias (vainilla, mantecado) al batir la grasa o mantequilla al inicio. La grasa retiene los aromas y evita que se evaporen con el calor.
+                    </li>
+                    <li>
+                        <strong>Prueba de frescura del polvo de hornear:</strong> Agrega ½ cucharadita de polvo de hornear en un vaso con agua tibia. Si efervesce de inmediato, está fresco; de lo contrario, reemplázalo.
+                    </li>
+                    <li>
+                        <strong>Conservar la humedad del bizcocho:</strong> Pincela el bizcocho con un almíbar ligero (agua y azúcar hervidas) en cuanto lo desmoldes y aún esté tibio para mantenerlo jugoso por días.
+                    </li>
+                </ul>
+            </details>
+
+            <details class="tip">
+                <summary>
+                    <span class="tips-texto"><h3>Enfriado, Desmolde y Decoración.</h3></span>
+                </summary>
+                <ul>
+                    <li>
+                        <strong>Reposo previo al desmolde:</strong> Deja reposar el molde de 10 a 15 minutos fuera del horno antes de desmoldar para evitar que la estructura tibia se rompa.
+                    </li>
+                    <li>
+                        <strong>Uso de rejilla metálica:</strong> Enfría el bizcocho sobre una rejilla para que el vapor inferior circule y no humedezca la base.
+                    </li>
+                    <li>
+                        <strong>Acabado limpio en la decoración:</strong> Para alisar cremas, chantillí o merengue con facilidad, calienta ligeramente la espátula en agua tibia y sécala bien antes de pasarla por la superficie.
+                    </li>
+                </ul>
+            </details>
+       
+            <details class="tip">
+                <summary>
+                    <span class="tips-texto"><h3>Secretos de Merengues, Cremas y Coberturas.</h3></span>
+                </summary>
+                <ul>
+                    <li>
+                        <strong>Tazón y varillas impolutos:</strong> Para que las claras levanten a punto de nieve o el merengue tome consistencia, el tazón y la batidora deben estar 100% libres de grasa o restos de yema.
+                    </li>
+                    <li>
+                        <strong>Estabilizar el merengue:</strong> Agrega una pizca de cremor tártaro o unas gotas de jugo de limón a las claras antes de batir para lograr un merengue más firme, brillante y estable.
+                    </li>
+                    <li>
+                        <strong>Ganache perfecto sin cortarse:</strong> Calienta la crema de leche casi hasta hervir antes de verterla sobre el chocolate picado. Déjalo reposar 2 minutos sin mover antes de mezclar desde el centro hacia afuera.
+                    </li>
+                    <li>
+                        <strong>Crema chantillí bien fría:</strong> Para montar crema de leche o nata rápidamente, asegúrate de que tanto la crema como el recipiente y las varillas de la batidora estén muy fríos (déjalos unos minutos en el congelador).
+                    </li>
+                </ul>
+            </details>
+    
+            <details class="tip">
+                <summary>
+                    <span class="tips-texto"><h3>Galletas, Hojaldre y Rescate Repostero.</h3></span>
+                </summary>
+                <ul>
+                    <li>
+                        <strong>Galletas con forma perfecta:</strong> Enfría las galletas cortadas en la bandeja durante 15 minutos en la nevera antes de hornearlas. Así evitarás que la mantequilla se derrita rápido y pierdan su figura en el horno.
+                    </li>
+                    <li>
+                        <strong>Hojaldre siempre crujiente:</strong> Maneja la masa de hojaldre bien fría y hornéala siempre a alta temperatura (200°C) para que el agua de la mantequilla cree el vapor necesario que separa sus capas.
+                    </li>
+                    <li>
+                        <strong>Rescatar una crema cortada:</strong> Si tu crema de mantequilla o mezcla se corta por choque de temperatura, añade una cucharada de la misma grasa derretida y tibia mientras bates a velocidad alta para reemulsionar.
+                    </li>
+                    <li>
+                        <strong>Corte limpio en bizcochos:</strong> Para dividir un bizcocho en capas iguales sin desmenuzarlo, utiliza hilo dental sin sabor o un cuchillo de sierra largo previamente calentado con agua caliente.
+                    </li>
+                </ul>
+            </details>
+        </div>
+        </center>
+
+        <h2 id="lista-recetas">Recetas</h2>
+        <p class="recetas-intro">¡Toca cualquier imagen del carrusel para descubrir los ingredientes y el paso a paso detallado de cada delicia!</p>
+
+        <section class="carrusel-recetas">
+            <div class="carrusel-recetas-contenedor">
+                <a class="receta-tarjeta" href="receta-alfajores-de-maicena.html">
+                    <img src="recetas img/alfajores-de-maicena.jpg" alt="Alfajores de Maicena" loading="lazy" decoding="async">
+                </a>
+
+                <a class="receta-tarjeta" href="receta-galletas-de-mantequilla-tradicionales.html">
+                    <img src="recetas img/galletas-de-mantequilla-tradicionales.jpg" alt="Galletas de Mantequilla Tradicionales" loading="lazy" decoding="async">
+                </a>
+            
+                <a class="receta-tarjeta" href="receta-galletas-pasta-seca.html">
+                    <img src="recetas img/galletas-pasta-seca.jpg" alt="Galletas de Pasta Seca" loading="lazy" decoding="async">
+                </a>
+            
+                <a class="receta-tarjeta" href="receta-marquesa-de-chocolate.html">
+                    <img src="recetas img/marquesa-de-chocolate.jpg" alt="Marquesa de Chocolate" loading="lazy" decoding="async">
+                </a>
+
+                <a class="receta-tarjeta" href="receta-palmeritas-de-hojaldre.html">
+                    <img src="recetas img/palmeritas-de-hojaldre.jpg" alt="Palmeritas de Hojaldre" loading="lazy" decoding="async">
+                </a>
+
+                <a class="receta-tarjeta" href="receta-pan-dulce-casero.html">
+                    <img src="recetas img/pan-dulce-casero.jpg" alt="Pan Dulce Casero (Pan de Leche o Tunja)" loading="lazy" decoding="async">
+                </a>
+
+                <a class="receta-tarjeta" href="receta-quesillo-tradicional.html">
+                    <img src="recetas img/quesillo-tradicional.jpg" alt="Quesillo Tradicional" loading="lazy" decoding="async">
+                </a>
+            
+                <a class="receta-tarjeta" href="receta-torta-de-auyama.html">
+                    <img src="recetas img/torta-de-auyama.jpg" alt="Torta de Auyama" loading="lazy" decoding="async">
+                </a>
+            
+                <a class="receta-tarjeta" href="receta-torta-humeda-de-chocolate.html">
+                    <img src="recetas img/torta-humeda-de-chocolate.jpg" alt="Torta Húmeda de Chocolate" loading="lazy" decoding="async">
+                </a>
+                
+                <a class="receta-tarjeta" href="receta-torta-tres-leches.html">
+                    <img src="recetas img/torta-tres-leches.jpg" alt="Torta Tres Leches" loading="lazy" decoding="async">
+                </a>
+            </div>
+        </section>
+
+        <div class="recetas-acciones">
+            <img class="mascota" src="logos de la tienda/mascota.png" alt="Mascota de la Tiendita Doña Adela" loading="lazy">
+            <a class="boton-descarga" href="recetas pdf/recetario-tiendita-dona-adela.pdf" download="Recetario Tiendita Doña Adela.pdf" target="_blank">🎁 ¡Descarga el Recetario Completo en PDF! 📥</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-marca">
+                <img src="logo-uptaeb.png" alt="logo de la UPTAEB" loading="lazy">
+                <p><strong>Universidad Politécnica Territorial Andrés Eloy Blanco</strong></p>
+            </div>
+
+            <div class="footer-bloque">
+                <strong class="footer-titulo">Redes</strong>
+                <div class="footer-redes">
+                    <a href="https://www.instagram.com/tienditadonaadela2/" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/instagram-footer.png" alt="" loading="lazy">
+                        Instagram
+                    </a>
+                    <a href="https://www.tiktok.com/@tienditadonaadela2/" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/tiktok-footer.png" alt="" loading="lazy">
+                        TikTok
+                    </a>
+                    <a href="https://wa.me/584120539116" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/whatsapp-footer.png" alt="" loading="lazy">
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-equipo">
+                <div class="footer-bloque">
+                    <strong class="footer-titulo">Desarrolladores</strong>
+                    <p>Cesar Ortiz <b>C.I:</b> 32.667.598<br>Joscarluis Escalona <b>C.I:</b> 32.745.127<br>Stefanía Flores <b>C.I:</b> 32.708.143<br>Maykel Ortiz <b>C.I:</b> 32.533.295</p>
+                </div>
+                <div class="footer-bloque">
+                    <strong class="footer-titulo">Tutores</strong>
+                    <p><b>Tutor: </b>Ing. Dionel Linarez <br> <b>Tutor asesor:</b> Ing. Maira Arroyo</p>
+                    <a class="volver-arriba" href="#arriba">&#8593; Volver Arriba</a>
+                </div>
+            </div>
+        </div>
+
+        <p class="derechos">© 2026 Tiendita Doña Adela. Todos los derechos reservados. <br>Quíbor, Municipio Jiménez, Estado Lara, Venezuela.</p>
+    </footer>
+</body>
+</html>

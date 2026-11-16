@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ff1493">
+    <title>Marquesa de Chocolate - Tiendita Doña Adela</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="arriba">
+     <!--header-->
+    <header>
+        <span><img src="logos de la tienda/logo.png" alt="logo"></span>
+
+        <!-- Checkbox oculto que guardará el estado (abierto/cerrado) -->
+        <input type="checkbox" id="btn-menu">
+
+        <!-- Botón que activa el checkbox (icono de 3 rayas / hamburguesa) -->
+        <label for="btn-menu" class="btn-menu" aria-label="Abrir o cerrar el menú">☰</label>
+
+        <!-- Enlaces del menú -->
+        <nav class="menu" aria-label="Menú principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo de Productos</a></li>
+                <li><a class="activo" aria-current="page" href="tips-y-recetas.html">Tips y Recetas</a></li>
+                <li><a href="interaccion.html">Interacción</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Capa que cierra el menú al tocar fuera de él (solo celular) -->
+        <label for="btn-menu" class="menu-fondo" aria-hidden="true"></label>
+    </header>
+
+    <main class="receta-pagina">
+        <nav class="migas" aria-label="Ruta"><a href="tips-y-recetas.html#lista-recetas">&#8592; Volver a las recetas</a></nav>
+        <h1>Marquesa de Chocolate</h1>
+        <div class="receta-portada">
+            <img src="recetas img/marquesa-de-chocolate.jpg" alt="Marquesa de Chocolate">
+        </div>
+        <p class="receta-datos"><span>6 ingredientes</span><span>7 pasos</span></p>
+        <div class="receta-acciones">
+            <a class="boton-descarga" href="recetas pdf/marquesa-de-chocolate.pdf" download="Marquesa de Chocolate - Tiendita Doña Adela.pdf" target="_blank">&#8595; Descargar receta (PDF)</a>
+        </div>
+
+        <div class="receta-cuerpo">
+            <section class="receta-bloque" aria-labelledby="t-ing">
+                <h2 id="t-ing">Ingredientes</h2>
+                    <ul class="ingredientes">
+                        <li>2 paquetes de galletas María</li>
+                        <li>1 taza de leche líquida (para remojar las galletas)</li>
+                    </ul>
+                    <h3>Para la crema de chocolate</h3>
+                    <ul class="ingredientes">
+                        <li>1 lata de leche condensada</li>
+                        <li>200 g de mantequilla o margarina sin sal a temperatura ambiente</li>
+                        <li>¾ de taza de cacao en polvo sin azúcar (o chocolate en polvo para postres)</li>
+                        <li>1 chorrito de leche líquida (si la crema queda muy espesa)</li>
+                    </ul>
+            </section>
+            <section class="receta-bloque" aria-labelledby="t-pas">
+                <h2 id="t-pas">Preparación</h2>
+                <ol class="pasos">
+                        <li><strong>Hacer la crema de chocolate:</strong> En un bol grande o con la ayuda de una batidora eléctrica, bate la mantequilla hasta que esté cremosa y de color claro. Agrega la leche condensada poco a poco sin dejar de batir.</li>
+                        <li><strong>Añadir el cacao:</strong> Incorpora el cacao en polvo tamizado a la mezcla anterior. Bate a velocidad baja hasta obtener una crema de chocolate homogénea, brillante y untuosa (si notas que está muy densa, puedes agregar un chorrito pequeño de leche).</li>
+                        <li><strong>Preparar el armado:</strong> En un plato hondo o taza, coloca la taza de leche líquida. Pasa las galletas María rápidamente por la leche (solo un segundo para que no se deshagan ni se ablanden demasiado).</li>
+                        <li><strong>Armar las capas:</strong> En un molde rectangular o refractario de vidrio, coloca una primera capa de galletas María remojadas cubriendo todo el fondo.</li>
+                        <li><strong>Añadir la crema:</strong> Unta una capa generosa de la crema de chocolate sobre las galletas, distribuyéndola de manera uniforme con una espátula.</li>
+                        <li><strong>Repetir:</strong> Alterna capas de galletas y capas de chocolate hasta terminar con los ingredientes, asegurándote de que la última capa superior sea de crema de chocolate.</li>
+                        <li><strong>Refrigerar:</strong> Lleva la marquesa a la nevera por un mínimo de 4 horas (lo ideal es dejarla toda la noche) para que tome consistencia firme y los sabores se concentren. ¡Sírvela bien fría!</li>
+                </ol>
+            </section>
+        </div>
+
+        <div class="receta-navegar"><a class="receta-vecina" href="receta-pan-dulce-casero.html"><small>&#8592; Receta anterior</small>Pan Dulce Casero (Pan de Leche o Tunja)</a><a class="receta-vecina siguiente" href="receta-alfajores-de-maicena.html"><small>Siguiente receta &#8594;</small>Alfajores de Maicena</a></div>
+        <a class="boton-secundario" href="tips-y-recetas.html#lista-recetas">Ver todas las recetas</a>
+    </main>
+
+
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-marca">
+                <img src="logo-uptaeb.png" alt="logo de la UPTAEB" loading="lazy">
+                <p><strong>Universidad Politécnica Territorial Andrés Eloy Blanco</strong></p>
+            </div>
+
+            <div class="footer-bloque">
+                <strong class="footer-titulo">Redes</strong>
+                <div class="footer-redes">
+                    <a href="https://www.instagram.com/tienditadonaadela2/" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/instagram-footer.png" alt="" loading="lazy">
+                        Instagram
+                    </a>
+                    <a href="https://www.tiktok.com/@tienditadonaadela2/" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/tiktok-footer.png" alt="" loading="lazy">
+                        TikTok
+                    </a>
+                    <a href="https://wa.me/584120539116" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/whatsapp-footer.png" alt="" loading="lazy">
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-equipo">
+                <div class="footer-bloque">
+                    <strong class="footer-titulo">Desarrolladores</strong>
+                    <p>Cesar Ortiz <b>C.I:</b> 32.667.598<br>Joscarluis Escalona <b>C.I:</b> 32.745.127<br>Stefanía Flores <b>C.I:</b> 32.708.143<br>Maykel Ortiz <b>C.I:</b> 32.533.295</p>
+                </div>
+                <div class="footer-bloque">
+                    <strong class="footer-titulo">Tutores</strong>
+                    <p><b>Tutor: </b>Ing. Dionel Linarez <br> <b>Tutor asesor:</b> Ing. Maira Arroyo</p>
+                    <a class="volver-arriba" href="#arriba">&#8593; Volver Arriba</a>
+                </div>
+            </div>
+        </div>
+
+        <p class="derechos">© 2026 Tiendita Doña Adela. Todos los derechos reservados. <br>Quíbor, Municipio Jiménez, Estado Lara, Venezuela.</p>
+    </footer>
+</body>
+</html>

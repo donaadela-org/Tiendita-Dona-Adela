@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ff1493">
+    <title>Galletas de Mantequilla Tradicionales - Tiendita Doña Adela</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="arriba">
+     <!--header-->
+    <header>
+        <span><img src="logos de la tienda/logo.png" alt="logo"></span>
+
+        <!-- Checkbox oculto que guardará el estado (abierto/cerrado) -->
+        <input type="checkbox" id="btn-menu">
+
+        <!-- Botón que activa el checkbox (icono de 3 rayas / hamburguesa) -->
+        <label for="btn-menu" class="btn-menu" aria-label="Abrir o cerrar el menú">☰</label>
+
+        <!-- Enlaces del menú -->
+        <nav class="menu" aria-label="Menú principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo de Productos</a></li>
+                <li><a class="activo" aria-current="page" href="tips-y-recetas.html">Tips y Recetas</a></li>
+                <li><a href="interaccion.html">Interacción</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Capa que cierra el menú al tocar fuera de él (solo celular) -->
+        <label for="btn-menu" class="menu-fondo" aria-hidden="true"></label>
+    </header>
+
+    <main class="receta-pagina">
+        <nav class="migas" aria-label="Ruta"><a href="tips-y-recetas.html#lista-recetas">&#8592; Volver a las recetas</a></nav>
+        <h1>Galletas de Mantequilla Tradicionales</h1>
+        <div class="receta-portada">
+            <img src="recetas img/galletas-de-mantequilla-tradicionales.jpg" alt="Galletas de Mantequilla Tradicionales">
+        </div>
+        <p class="receta-datos"><span>6 ingredientes</span><span>7 pasos</span></p>
+        <div class="receta-acciones">
+            <a class="boton-descarga" href="recetas pdf/galletas-de-mantequilla-tradicionales.pdf" download="Galletas de Mantequilla Tradicionales - Tiendita Doña Adela.pdf" target="_blank">&#8595; Descargar receta (PDF)</a>
+        </div>
+
+        <div class="receta-cuerpo">
+            <section class="receta-bloque" aria-labelledby="t-ing">
+                <h2 id="t-ing">Ingredientes</h2>
+                    <ul class="ingredientes">
+                        <li>250 g de harina de trigo todo uso</li>
+                        <li>125 g de mantequilla o margarina a temperatura ambiente</li>
+                        <li>100 g de azúcar (puedes usar azúcar glass o refinada)</li>
+                        <li>1 huevo</li>
+                        <li>1 cucharadita de vainilla</li>
+                        <li>Una pizca de sal</li>
+                    </ul>
+            </section>
+            <section class="receta-bloque" aria-labelledby="t-pas">
+                <h2 id="t-pas">Preparación</h2>
+                <ol class="pasos">
+                        <li><strong>Cremar la mantequilla:</strong> En un bol amplio, bate la mantequilla junto con el azúcar hasta obtener una crema suave, pálida y esponjosa.</li>
+                        <li><strong>Añadir el huevo y la vainilla:</strong> Incorpora el huevo y la cucharadita de vainilla a la mezcla anterior. Sigue batiendo hasta que se integren por completo.</li>
+                        <li><strong>Agregar los secos:</strong> Cierne la harina de trigo junto con la pizca de sal. Añádela poco a poco a la mezcla húmeda.</li>
+                        <li><strong>Formar la masa:</strong> Integra los ingredientes con una espátula o con las manos limpias hasta formar una masa homogénea y suave que no se pegue de los dedos (no amases en exceso para que no queden duras).</li>
+                        <li><strong>Dar forma:</strong> Toma pequeñas porciones de masa, haz bolitas con las manos y colócalas sobre una bandeja para hornear previamente enmantequillada o con papel encerado, dejando espacio entre ellas. Aplástalas ligeramente con un tenedor para darles un diseño.</li>
+                        <li><strong>Hornear:</strong> Llévalas al horno previamente precalentado a 180°C durante unos 12 a 15 minutos, o hasta que notes que los bordes empiezan a dorarse ligeramente.</li>
+                        <li><strong>Enfriar:</strong> Sácalas del horno y déjalas reposar en la bandeja durante 5 minutos antes de pasarlas a una rejilla para que se enfríen por completo y adquieran su textura crujiente.</li>
+                </ol>
+            </section>
+        </div>
+
+        <div class="receta-navegar"><a class="receta-vecina" href="receta-torta-tres-leches.html"><small>&#8592; Receta anterior</small>Torta Tres Leches</a><a class="receta-vecina siguiente" href="receta-torta-humeda-de-chocolate.html"><small>Siguiente receta &#8594;</small>Torta Húmeda de Chocolate</a></div>
+        <a class="boton-secundario" href="tips-y-recetas.html#lista-recetas">Ver todas las recetas</a>
+    </main>
+
+
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-marca">
+                <img src="logo-uptaeb.png" alt="logo de la UPTAEB" loading="lazy">
+                <p><strong>Universidad Politécnica Territorial Andrés Eloy Blanco</strong></p>
+            </div>
+
+            <div class="footer-bloque">
+                <strong class="footer-titulo">Redes</strong>
+                <div class="footer-redes">
+                    <a href="https://www.instagram.com/tienditadonaadela2/" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/instagram-footer.png" alt="" loading="lazy">
+                        Instagram
+                    </a>
+                    <a href="https://www.tiktok.com/@tienditadonaadela2/" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/tiktok-footer.png" alt="" loading="lazy">
+                        TikTok
+                    </a>
+                    <a href="https://wa.me/584120539116" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/whatsapp-footer.png" alt="" loading="lazy">
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-equipo">
+                <div class="footer-bloque">
+                    <strong class="footer-titulo">Desarrolladores</strong>
+                    <p>Cesar Ortiz <b>C.I:</b> 32.667.598<br>Joscarluis Escalona <b>C.I:</b> 32.745.127<br>Stefanía Flores <b>C.I:</b> 32.708.143<br>Maykel Ortiz <b>C.I:</b> 32.533.295</p>
+                </div>
+                <div class="footer-bloque">
+                    <strong class="footer-titulo">Tutores</strong>
+                    <p><b>Tutor: </b>Ing. Dionel Linarez <br> <b>Tutor asesor:</b> Ing. Maira Arroyo</p>
+                    <a class="volver-arriba" href="#arriba">&#8593; Volver Arriba</a>
+                </div>
+            </div>
+        </div>
+
+        <p class="derechos">© 2026 Tiendita Doña Adela. Todos los derechos reservados. <br>Quíbor, Municipio Jiménez, Estado Lara, Venezuela.</p>
+    </footer>
+</body>
+</html>

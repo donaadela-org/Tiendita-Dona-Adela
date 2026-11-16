@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ff1493">
+    <title>Quesillo Tradicional - Tiendita Doña Adela</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="arriba">
+     <!--header-->
+    <header>
+        <span><img src="logos de la tienda/logo.png" alt="logo"></span>
+
+        <!-- Checkbox oculto que guardará el estado (abierto/cerrado) -->
+        <input type="checkbox" id="btn-menu">
+
+        <!-- Botón que activa el checkbox (icono de 3 rayas / hamburguesa) -->
+        <label for="btn-menu" class="btn-menu" aria-label="Abrir o cerrar el menú">☰</label>
+
+        <!-- Enlaces del menú -->
+        <nav class="menu" aria-label="Menú principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo de Productos</a></li>
+                <li><a class="activo" aria-current="page" href="tips-y-recetas.html">Tips y Recetas</a></li>
+                <li><a href="interaccion.html">Interacción</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Capa que cierra el menú al tocar fuera de él (solo celular) -->
+        <label for="btn-menu" class="menu-fondo" aria-hidden="true"></label>
+    </header>
+
+    <main class="receta-pagina">
+        <nav class="migas" aria-label="Ruta"><a href="tips-y-recetas.html#lista-recetas">&#8592; Volver a las recetas</a></nav>
+        <h1>Quesillo Tradicional</h1>
+        <div class="receta-portada">
+            <img src="recetas img/quesillo-tradicional.jpg" alt="Quesillo Tradicional">
+        </div>
+            <p class="receta-desc">Un postre cremoso, dulce y con su característico caramelo líquido por encima.</p>
+        <p class="receta-datos"><span>7 ingredientes</span><span>5 pasos</span></p>
+        <div class="receta-acciones">
+            <a class="boton-descarga" href="recetas pdf/quesillo-tradicional.pdf" download="Quesillo Tradicional - Tiendita Doña Adela.pdf" target="_blank">&#8595; Descargar receta (PDF)</a>
+        </div>
+
+        <div class="receta-cuerpo">
+            <section class="receta-bloque" aria-labelledby="t-ing">
+                <h2 id="t-ing">Ingredientes</h2>
+                    <h3>Para el caramelo</h3>
+                    <ul class="ingredientes">
+                        <li>5 cucharadas de azúcar</li>
+                        <li>2 cucharadas de agua</li>
+                    </ul>
+                    <h3>Para el quesillo</h3>
+                    <ul class="ingredientes">
+                        <li>1 lata de leche condensada (aprox. 395 g)</li>
+                        <li>La misma medida de la lata de leche completa (o leche líquida)</li>
+                        <li>4 huevos enteros</li>
+                        <li>1 cucharadita de vainilla</li>
+                        <li>Un chorrito pequeño de ron (opcional, para realzar el sabor)</li>
+                    </ul>
+            </section>
+            <section class="receta-bloque" aria-labelledby="t-pas">
+                <h2 id="t-pas">Preparación</h2>
+                <ol class="pasos">
+                        <li><strong>Hacer el caramelo:</strong> Coloca las 5 cucharadas de azúcar y las 2 cucharadas de agua en una quesillera o molde para quesillo (preferiblemente con tapa). Llévalo a fuego medio-bajo directamente en la hornilla hasta que el azúcar se derrita y tome un color caramelo dorado (sin quemarse). Mueve el molde con cuidado para que el caramelo cubra todo el fondo y las paredes. Reserva.</li>
+                        <li><strong>Preparar la mezcla:</strong> En una licuadora, agrega los 4 huevos, la lata de leche condensada, la leche completa, la vainilla y el ron. Licúa a velocidad media durante 1 o 2 minutos hasta que todo esté completamente integrado y espumoso.</li>
+                        <li><strong>Llenar el molde:</strong> Vierte la mezcla que licuaste dentro del molde que ya tiene el caramelo listo y frío. Cierra muy bien el molde con su tapa (si no tiene tapa, cúbrelo herméticamente con papel aluminio para que no le entre agua).</li>
+                        <li><strong>Cocinar al baño de María:</strong> Coloca el molde dentro de una olla más grande con agua que cubra aproximadamente la mitad de la altura del molde del quesillo. Tapa la olla grande y cocina a fuego medio durante 1 hora o 1 hora y media. Puedes verificar si está listo introduciendo un palillo; si sale limpio, ya está.</li>
+                        <li><strong>Enfriar y desmoldar:</strong> Apaga el fuego, retira el molde del agua y déjalo enfriar a temperatura ambiente. Luego, llévalo a la nevera por al menos 4 horas (o toda la noche) antes de desmoldar para que tome firmeza. Pasa un cuchillo fino por los bordes, coloca un plato hondo encima y voltéalo con un movimiento firme.</li>
+                </ol>
+            </section>
+        </div>
+
+        <div class="receta-navegar"><span></span><a class="receta-vecina siguiente" href="receta-torta-de-auyama.html"><small>Siguiente receta &#8594;</small>Torta de Auyama</a></div>
+        <a class="boton-secundario" href="tips-y-recetas.html#lista-recetas">Ver todas las recetas</a>
+    </main>
+
+
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-marca">
+                <img src="logo-uptaeb.png" alt="logo de la UPTAEB" loading="lazy">
+                <p><strong>Universidad Politécnica Territorial Andrés Eloy Blanco</strong></p>
+            </div>
+
+            <div class="footer-bloque">
+                <strong class="footer-titulo">Redes</strong>
+                <div class="footer-redes">
+                    <a href="https://www.instagram.com/tienditadonaadela2/" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/instagram-footer.png" alt="" loading="lazy">
+                        Instagram
+                    </a>
+                    <a href="https://www.tiktok.com/@tienditadonaadela2/" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/tiktok-footer.png" alt="" loading="lazy">
+                        TikTok
+                    </a>
+                    <a href="https://wa.me/584120539116" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/whatsapp-footer.png" alt="" loading="lazy">
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-equipo">
+                <div class="footer-bloque">
+                    <strong class="footer-titulo">Desarrolladores</strong>
+                    <p>Cesar Ortiz <b>C.I:</b> 32.667.598<br>Joscarluis Escalona <b>C.I:</b> 32.745.127<br>Stefanía Flores <b>C.I:</b> 32.708.143<br>Maykel Ortiz <b>C.I:</b> 32.533.295</p>
+                </div>
+                <div class="footer-bloque">
+                    <strong class="footer-titulo">Tutores</strong>
+                    <p><b>Tutor: </b>Ing. Dionel Linarez <br> <b>Tutor asesor:</b> Ing. Maira Arroyo</p>
+                    <a class="volver-arriba" href="#arriba">&#8593; Volver Arriba</a>
+                </div>
+            </div>
+        </div>
+
+        <p class="derechos">© 2026 Tiendita Doña Adela. Todos los derechos reservados. <br>Quíbor, Municipio Jiménez, Estado Lara, Venezuela.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ff1493">
+    <title>Tiendita Doña Adela</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="arriba">
+    <!--header-->
+    <header>
+        <span><img src="logos de la tienda/logo.png" alt="logo"></span>
+
+        <!-- Checkbox oculto que guardará el estado (abierto/cerrado) -->
+        <input type="checkbox" id="btn-menu">
+
+        <!-- Botón que activa el checkbox (icono de 3 rayas / hamburguesa) -->
+        <label for="btn-menu" class="btn-menu" aria-label="Abrir o cerrar el menú">☰</label>
+
+        <!-- Enlaces del menú -->
+        <nav class="menu" aria-label="Menú principal">
+            <ul>
+                <li><a class="activo" aria-current="page" href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo de Productos</a></li>
+                <li><a href="tips-y-recetas.html">Tips y Recetas</a></li>
+                <li><a href="interaccion.html">Interacción</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Capa que cierra el menú al tocar fuera de él (solo celular) -->
+        <label for="btn-menu" class="menu-fondo" aria-hidden="true"></label>
+    </header>
+    
+    <!--carrusel-->
+    <section class="carrusel">
+        <div class="carrusel-contenedor">
+            <img src="Carrusel tienda/1.jpg" alt="foto de la tienda desde afuera">
+            <img src="Carrusel tienda/2.jpg" alt="foto del interior de la tienda">
+            <img src="Carrusel tienda/3.jpg" alt="foto del interior de la tienda">
+            <img src="Carrusel tienda/4.jpg" alt="foto del interior de la tienda">
+        </div>
+    </section>
+    <hr>
+    <div class="reseña">
+        <h3>Reseña Histórica</h3>
+        <p>
+            La Tiendita Doña Adela nació en el año 2024 en la ciudad de Quíbor, Municipio Jiménez del Estado Lara. Ubicada en la calle 13, entre avenidas 5 y 6 del sector La Libertad, surgió como una respuesta a las necesidades del entorno local, consolidándose rápidamente como una organización especializada en la distribución minorista y mayorista de insumos para repostería, pastelería y panadería.
+            <br><br><center><strong>Misión:</strong></center><br>Contribuir activamente con el desarrollo y la satisfacción de nuestros clientes y consumidores, proporcionando productos de calidad garantizada para las áreas de panadería, pastelería y repostería; impulsando a emprendedores y familias a través de un servicio accesible, asesoría cercana y un firme compromiso social con nuestra comunidad.
+            <br><br><center><strong>Visión:</strong></center><br> Convertirnos en un proveedor líder a nivel nacional con la línea más completa de insumos y productos para la industria de la panadería y pastelería, destacando por la innovación en nuestros canales informativos y de atención, la excelencia en la calidad de nuestro catálogo y el apoyo constante al crecimiento económico del sector.
+        </p>
+    </div>
+
+    <!--categorías del catálogo-->
+    <section class="conoce" aria-labelledby="titulo-conoce">
+        <h2 id="titulo-conoce">¡Todo lo que necesitas para crear!</h2>
+        <p class="conoce-sub">Conoce nuestras categorías de productos y utencilios para tus preparaciones.</p>
+        <div class="conoce-grid">
+            <div class="conoce-tarjeta">
+                <span class="conoce-icono" aria-hidden="true">
+                    <img src="iconos categoria/1.png">
+                </span>
+                <span class="conoce-nombre">Insumos Base Secos</span>
+            </div>
+            <div class="conoce-tarjeta">
+                <span class="conoce-icono" aria-hidden="true">
+                    <img src="iconos categoria/2.png">
+                </span>
+                <span class="conoce-nombre">Endulzantes y Azúcares</span>
+            </div>
+            <div class="conoce-tarjeta">
+                <span class="conoce-icono" aria-hidden="true">
+                    <img src="iconos categoria/3.png">
+                </span>
+                <span class="conoce-nombre">Grasas y Lácteos</span>
+            </div>
+            <div class="conoce-tarjeta">
+                <span class="conoce-icono" aria-hidden="true">
+                    <img src="iconos categoria/4.png">
+                </span>
+                <span class="conoce-nombre">Leudantes, Aromas y Aditivos</span>
+            </div>
+            <div class="conoce-tarjeta">
+                <span class="conoce-icono" aria-hidden="true">
+                    <img src="iconos categoria/5.png">
+                </span>
+                <span class="conoce-nombre">Coberturas, Rellenos y Decoraciones</span>
+            </div>
+            <div class="conoce-tarjeta">
+                <span class="conoce-icono" aria-hidden="true">
+                    <img src="iconos categoria/6.png">
+                </span>
+                <span class="conoce-nombre">Moldes y Superficies de Horneado</span>
+            </div>
+            <div class="conoce-tarjeta">
+                <span class="conoce-icono" aria-hidden="true">
+                    <img src="iconos categoria/7.png">
+                </span>
+                <span class="conoce-nombre">Envases, Empaques y Presentación</span>
+            </div>
+            <div class="conoce-tarjeta">
+                <span class="conoce-icono" aria-hidden="true">
+                    <img src="iconos categoria/8.png">
+                </span>
+                <span class="conoce-nombre">Herramientas y Utensilios</span>
+            </div>
+        </div>
+
+        <center>
+        <a class="conoce-boton" href="catalogo.html">Ir al Catálogo de Productos</a>
+        </center>
+        
+    </section>
+
+    <hr>
+
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-marca">
+                <img src="logo-uptaeb.png" alt="logo de la UPTAEB" loading="lazy">
+                <p><strong>Universidad Politécnica Territorial Andrés Eloy Blanco</strong></p>
+            </div>
+
+            <div class="footer-bloque">
+                <strong class="footer-titulo">Redes</strong>
+                <div class="footer-redes">
+                    <a href="https://www.instagram.com/tienditadonaadela2/" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/instagram-footer.png" alt="" loading="lazy">
+                        Instagram
+                    </a>
+                    <a href="https://www.tiktok.com/@tienditadonaadela2/" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/tiktok-footer.png" alt="" loading="lazy">
+                        TikTok
+                    </a>
+                    <a href="https://wa.me/584120539116" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/whatsapp-footer.png" alt="" loading="lazy">
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-equipo">
+                <div class="footer-bloque">
+                    <strong class="footer-titulo">Desarrolladores</strong>
+                    <p>Cesar Ortiz <b>C.I:</b> 32.667.598<br>Joscarluis Escalona <b>C.I:</b> 32.745.127<br>Stefanía Flores <b>C.I:</b> 32.708.143<br>Maykel Ortiz <b>C.I:</b> 32.533.295</p>
+                </div>
+                <div class="footer-bloque">
+                    <strong class="footer-titulo">Tutores</strong>
+                    <p><b>Tutor: </b>Ing. Dionel Linarez <br> <b>Tutor asesor:</b> Ing. Maira Arroyo</p>
+                    <a class="volver-arriba" href="#arriba">&#8593; Volver Arriba</a>
+                </div>
+            </div>
+        </div>
+
+        <p class="derechos">© 2026 Tiendita Doña Adela. Todos los derechos reservados. <br>Quíbor, Municipio Jiménez, Estado Lara, Venezuela.</p>
+    </footer>
+</body>
+</html>

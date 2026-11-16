@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ff1493">
+    <title>Galletas Pasta Seca - Tiendita Doña Adela</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="arriba">
+     <!--header-->
+    <header>
+        <span><img src="logos de la tienda/logo.png" alt="logo"></span>
+
+        <!-- Checkbox oculto que guardará el estado (abierto/cerrado) -->
+        <input type="checkbox" id="btn-menu">
+
+        <!-- Botón que activa el checkbox (icono de 3 rayas / hamburguesa) -->
+        <label for="btn-menu" class="btn-menu" aria-label="Abrir o cerrar el menú">☰</label>
+
+        <!-- Enlaces del menú -->
+        <nav class="menu" aria-label="Menú principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo de Productos</a></li>
+                <li><a class="activo" aria-current="page" href="tips-y-recetas.html">Tips y Recetas</a></li>
+                <li><a href="interaccion.html">Interacción</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Capa que cierra el menú al tocar fuera de él (solo celular) -->
+        <label for="btn-menu" class="menu-fondo" aria-hidden="true"></label>
+    </header>
+
+    <main class="receta-pagina">
+        <nav class="migas" aria-label="Ruta"><a href="tips-y-recetas.html#lista-recetas">&#8592; Volver a las recetas</a></nav>
+        <h1>Galletas Pasta Seca</h1>
+        <div class="receta-portada">
+            <img src="recetas img/galletas-pasta-seca.jpg" alt="Galletas Pasta Seca">
+        </div>
+        <p class="receta-datos"><span>6 ingredientes</span><span>6 pasos</span></p>
+        <div class="receta-acciones">
+            <a class="boton-descarga" href="recetas pdf/galletas-pasta-seca.pdf" download="Galletas Pasta Seca - Tiendita Doña Adela.pdf" target="_blank">&#8595; Descargar receta (PDF)</a>
+        </div>
+
+        <div class="receta-cuerpo">
+            <section class="receta-bloque" aria-labelledby="t-ing">
+                <h2 id="t-ing">Ingredientes</h2>
+                    <ul class="ingredientes">
+                        <li>250 g de azúcar (1¼ tazas)</li>
+                        <li>250 g de manteca</li>
+                        <li>½ kg de harina de trigo leudante</li>
+                        <li>2 huevos</li>
+                        <li>1 cucharada de vainilla y ralladura de limón</li>
+                    </ul>
+                    <h3>Para decorar (opcional)</h3>
+                    <ul class="ingredientes">
+                        <li>Lluvia de chocolate, granillo/carnaval de colores o coco rallado</li>
+                    </ul>
+            </section>
+            <section class="receta-bloque" aria-labelledby="t-pas">
+                <h2 id="t-pas">Preparación</h2>
+                <ol class="pasos">
+                        <li><strong>Cremar:</strong> Batir el azúcar con la manteca hasta obtener una mezcla cremosa.</li>
+                        <li><strong>Integrar líquidos:</strong> Agregar los huevos uno a uno y luego la vainilla junto con la ralladura de limón.</li>
+                        <li><strong>Agregar la harina:</strong> Incorporar la harina de trigo poco a poco mientras se sigue batiendo a velocidad baja. Es importante batir con calma para no sobretrabajar la masa.</li>
+                        <li><strong>Formar las galletas:</strong> Colocar la mezcla dentro de una manga pastelera con boquilla rizada y dar forma a las galletas sobre una bandeja.</li>
+                        <li><strong>Decorar:</strong> Colocar la lluvia de chocolate, caramelos o coco rallado por encima si lo deseas.</li>
+                        <li><strong>Hornear:</strong> Lllevar al horno precalentado a 170°C durante unos 20 minutos o hasta que la base esté ligeramente dorada.</li>
+                </ol>
+            </section>
+        </div>
+
+        <div class="receta-navegar"><a class="receta-vecina" href="receta-torta-de-auyama.html"><small>&#8592; Receta anterior</small>Torta de Auyama</a><a class="receta-vecina siguiente" href="receta-torta-tres-leches.html"><small>Siguiente receta &#8594;</small>Torta Tres Leches</a></div>
+        <a class="boton-secundario" href="tips-y-recetas.html#lista-recetas">Ver todas las recetas</a>
+    </main>
+
+
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-marca">
+                <img src="logo-uptaeb.png" alt="logo de la UPTAEB" loading="lazy">
+                <p><strong>Universidad Politécnica Territorial Andrés Eloy Blanco</strong></p>
+            </div>
+
+            <div class="footer-bloque">
+                <strong class="footer-titulo">Redes</strong>
+                <div class="footer-redes">
+                    <a href="https://www.instagram.com/tienditadonaadela2/" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/instagram-footer.png" alt="" loading="lazy">
+                        Instagram
+                    </a>
+                    <a href="https://www.tiktok.com/@tienditadonaadela2/" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/tiktok-footer.png" alt="" loading="lazy">
+                        TikTok
+                    </a>
+                    <a href="https://wa.me/584120539116" target="_blank" rel="noopener noreferrer">
+                        <img src="img redes sociales/whatsapp-footer.png" alt="" loading="lazy">
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-equipo">
+                <div class="footer-bloque">
+                    <strong class="footer-titulo">Desarrolladores</strong>
+                    <p>Cesar Ortiz <b>C.I:</b> 32.667.598<br>Joscarluis Escalona <b>C.I:</b> 32.745.127<br>Stefanía Flores <b>C.I:</b> 32.708.143<br>Maykel Ortiz <b>C.I:</b> 32.533.295</p>
+                </div>
+                <div class="footer-bloque">
+                    <strong class="footer-titulo">Tutores</strong>
+                    <p><b>Tutor: </b>Ing. Dionel Linarez <br> <b>Tutor asesor:</b> Ing. Maira Arroyo</p>
+                    <a class="volver-arriba" href="#arriba">&#8593; Volver Arriba</a>
+                </div>
+            </div>
+        </div>
+
+        <p class="derechos">© 2026 Tiendita Doña Adela. Todos los derechos reservados. <br>Quíbor, Municipio Jiménez, Estado Lara, Venezuela.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,1491 @@
+/* ===== Tiendita Doña Adela — estilos responsive (PC, Android, iOS) ===== */
+:root{
+    --header-h: 65px;
+    --rosa: deeppink;
+    --fuente: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*,*::before,*::after{ 
+    box-sizing: border-box; 
+    margin: 0; padding: 0; 
+}
+html{
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%; /* evita que iOS agrande el texto al girar el teléfono */
+    text-size-adjust: 100%;
+}
+body{
+    background: linear-gradient(160deg, #ffe0f0 0%, #ffffff 55%, #d9f3fb 100%);
+    font-family: var(--fuente);
+    line-height: 1.5;
+    padding-top: var(--header-h); /* espacio para el header fijo */
+    -webkit-tap-highlight-color: transparent;
+}
+img{ max-width: 100%;
+    height: auto;
+}
+hr{ border: 0; 
+    margin: 8px 0; 
+}
+:focus-visible{ 
+    outline: 3px solid #000; 
+    outline-offset: 2px; 
+}
+h2{ 
+    text-align: center; 
+    margin-bottom: 20px; 
+    padding: 0 10px; 
+}
+h2[id]{ 
+    scroll-margin-top: calc(var(--header-h) + 90px); 
+}
+
+/* ---------- HEADER Y MENÚ ---------- */
+header{
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0;
+    z-index: 100;
+    height: var(--header-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 max(15px, env(safe-area-inset-right)) 0 max(15px, env(safe-area-inset-left));
+    background-color: deeppink;
+    font-size: 20px;
+}
+header > span{ 
+    display: flex; 
+    flex-shrink: 0; 
+}
+header img{
+    display: block;
+    height: 56px; 
+    width: 134px; 
+    max-height: 56px; 
+    object-fit: contain; 
+}
+
+/* En PC se oculta el botón hamburguesa */
+#btn-menu, .btn-menu{ 
+    display: none; 
+}
+
+/* Capa para cerrar el menú al tocar fuera: solo existe en celular */
+.menu-fondo{ 
+    display: none; 
+}
+
+.menu ul{ 
+    display: flex; 
+    list-style: none;
+    gap: 6px; 
+}
+.menu a{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px 8px;
+    border-bottom: 3px solid transparent;
+    border-radius: 12px;
+    transition: border-color 0.3s ease;
+}
+.menu a:hover, .menu a.activo{ 
+    border-bottom-color: white; 
+}
+
+/* Teléfonos y tabletas verticales */
+@media (max-width: 960px){
+    .btn-menu{
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        width: 48px; 
+        height: 48px;
+        font-size: 28px; 
+        font-weight: bold; 
+        color: black;
+        border-radius: 8px; 
+        cursor: pointer;
+        user-select: none; 
+        -webkit-user-select: none;
+    }
+    .btn-menu:active{ background: rgba(255,255,255,0.3); }
+
+    /* El checkbox sigue oculto, pero accesible con teclado (no usa display:none) */
+    #btn-menu{ 
+        display: block; 
+        position: absolute; 
+        opacity: 0; width: 1px; 
+        height: 1px; 
+        pointer-events: none; 
+    }
+    #btn-menu:focus-visible + .btn-menu{ 
+        outline: 3px solid black; 
+    }
+
+    .menu{
+        position: absolute;
+        top: 100%;
+        right: max(12px, env(safe-area-inset-right));
+        width: min(320px, calc(100vw - 24px));
+        background-color: var(--rosa);
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+        max-height: calc(100vh - 80px);
+        max-height: calc(100dvh - 80px);
+        overflow-y: auto;
+        opacity: 0; visibility: hidden; 
+        transform: translateY(-8px);
+        transition: opacity .25s ease, transform .25s ease, visibility .25s;
+    }
+    #btn-menu:checked ~ .menu{ 
+        opacity: 1; 
+        visibility: visible; 
+        transform: none; 
+    }
+
+    /* Al tocar cualquier parte oscura de la pantalla, el menú se cierra */
+    .menu-fondo{
+        display: block;
+        position: fixed;
+        top: var(--header-h); 
+        right: 0; 
+        bottom: 0; 
+        left: 0;
+        z-index: -1;
+        background-color: rgba(0,0,0,0.25);
+        opacity: 0; 
+        visibility: hidden;
+        transition: opacity .25s ease, visibility .25s;
+    }
+    #btn-menu:checked ~ .menu-fondo{ 
+        opacity: 1; 
+        visibility: visible; 
+    }
+
+    .menu ul{ 
+        flex-direction: column; 
+        gap: 0; 
+        padding: 6px 0 10px; }
+    .menu a{ 
+        display: block; 
+        text-align: center; 
+        padding: 14px 16px; 
+        border-radius: 0; 
+        } /* zona táctil de 48px */
+    .menu a:hover, .menu a.activo{ 
+        background: rgba(255,255,255,0.22); 
+        border-bottom-color: transparent; 
+    }
+
+    header img{ 
+        width: 110px; 
+    }
+}
+
+/* ---------- INICIO ---------- */
+.carrusel{
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 26px;
+    border: 3px solid deeppink;
+    box-shadow: 0 6px 16px rgba(255, 20, 147, 0.35);
+    margin: 20px auto 0;
+}
+
+.carrusel-contenedor{
+    display: flex;
+    width: 400%;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    animation: moverCarrusel 20s infinite ease-in-out;
+}
+.carrusel img{
+    flex-shrink: 0;
+    width: 25%;
+    height: clamp(350px, 40vw, min(500px, 45vh));
+    object-fit: cover;
+    background-color: lightskyblue;
+    transition: all .5s ease;
+    border-radius: 20px;
+}
+
+    @keyframes moverCarrusel {
+        0% { transform: translateX(0); }
+        20% { transform: translateX(0); }
+        25% { transform: translateX(-25%); }
+        45% { transform: translateX(-25%); }
+        50% { transform: translateX(-50%); }
+        70% { transform: translateX(-50%); }
+        75% { transform: translateX(-75%); }
+        95% { transform: translateX(-75%); }
+        100% { transform: translateX(0); }
+    }
+
+.reseña{
+    width: min(90%, 800px);
+    margin: 20px auto 40px;
+    padding: 14px clamp(10px, 3vw, 20px);
+    background-color: ghostwhite;
+    font-size: clamp(16px, 4.2vw, 20px);
+    border-radius: 20px;
+    box-shadow: 0 4px 4px #555;
+    text-align: left;
+    hyphens: auto;
+    border-top: 5px solid deeppink;
+}
+.reseña h3{ 
+    text-align: center; 
+    margin-bottom: 15px; 
+}
+@media (min-width: 700px){ 
+    .reseña{ 
+    text-align: justify; 
+    } 
+}
+
+/* ---------- CONOCE NUESTRO CATÁLOGO (categorías en el inicio) ---------- */
+.conoce{
+    width: min(92%, 1000px);
+    margin: 10px auto 50px;
+    padding: 28px clamp(12px, 3vw, 30px) 30px;
+    background: linear-gradient(160deg, #ffe0f0 0%, #ffffff 50%, #d9f3fb 100%);
+    border-radius: 24px;
+    box-shadow: 0 6px 18px rgba(255, 20, 147, 0.25);
+}
+.conoce h2{
+    margin-bottom: 6px;
+    color: deeppink;
+    font-size: clamp(26px, 6.5vw, 40px);
+    text-shadow: 2px 2px 0 #d9f3fb;
+}
+.conoce-sub{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 22px;
+    font-size: clamp(15px, 4vw, 18px);
+}
+.conoce-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+.conoce-tarjeta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 18px 10px 16px;
+    background-color: white;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    box-shadow: 0 3px 30px rgba(0,0,0,0.15);
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+}
+.conoce-icono{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffd1e8, #c9eefa);
+    font-size: 38px;
+    line-height: 1;
+}
+.conoce-nombre{
+    font-weight: bold;
+    font-size: clamp(14px, 3.6vw, 17px);
+    line-height: 1.25;
+}
+
+.conoce-boton{
+    display: block;
+    width: fit-content;
+    padding: 11px 20px;
+    font-size: x-large;
+    text-align: center;
+    margin-top: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    background: linear-gradient(135deg, deeppink, #ff69b4);
+    border-radius: 50px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(255, 20, 147, 0.35);
+}
+.conoce-boton:hover{
+    transition: all 0.3s ease;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 20, 147, 0.3);
+    background: linear-gradient(135deg, rgb(226, 18, 129), #ff61b0);
+}
+    
+@media (min-width: 700px){
+    .conoce-grid{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+    }
+}
+
+.conoce-icono img{
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+}
+
+/* ---------- CATÁLOGO ---------- */
+#catálogo{
+    --barra-h: 96px;   /* alto de la barra de categorías (se usa también para que los títulos no queden tapados al hacer clic) */
+}
+
+/* Barra de categorías: se queda fija debajo del header mientras se baja */
+#catálogo .categorías{
+    position: sticky; 
+    top: var(--header-h); 
+    z-index: 50;
+    display: flex; 
+    align-items: stretch;
+    gap: 10px;
+    height: var(--barra-h);
+    padding: 8px 12px;
+    margin-bottom: 14px;
+    background-color: rgba(255, 255, 255, 0.94);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border-bottom: 3px solid deeppink;
+    box-shadow: 0 4px 10px rgba(255, 20, 147, 0.25);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: 100%;
+}
+
+#catálogo .categorías::-webkit-scrollbar{ 
+    height: 6px; 
+}
+
+#catálogo .categorías::-webkit-scrollbar-thumb{ 
+    background-color: deepskyblue;
+    border-radius: 5px; 
+}
+
+#catálogo .categorías a{
+    flex: 1 1 0;
+    min-width: 86px;
+    max-width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 4px 6px;
+    background-color: white;
+    border: 2px solid #ffd1e8;
+    border-radius: 14px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+    color: #333;
+    font-size: 12.5px;
+    font-weight: bold;
+    line-height: 1.15;
+    text-align: center;
+    text-decoration: none;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+#catálogo .categorías a:first-child{ 
+    margin-left: auto;   /* centra la barra cuando caben todos; si no caben, empieza desde la izquierda */
+}
+#catálogo .categorías a:last-child{ 
+    margin-right: auto; 
+}
+#catálogo .categorías img{
+    display: block;
+    width: 34px;
+    height: 34px;
+    transform: none;
+    transition: none;
+}
+#catálogo .categorías a:active{
+    transform: scale(0.95);
+    border-color: deeppink;
+}
+@media (hover: hover){
+    #catálogo .categorías a:hover{
+        transform: translateY(-3px);
+        border-color: deeppink;
+        box-shadow: 0 6px 12px rgba(255, 20, 147, 0.3);
+    }
+}
+
+/* Título de cada categoría */
+#catálogo h2{
+    display: block;
+    width: fit-content;
+    max-width: calc(100% - 24px);
+    margin: 34px auto 20px;
+    padding: 8px 26px;
+    background: linear-gradient(135deg, deeppink, #ff69b4);
+    color: white;
+    font-size: clamp(19px, 5vw, 28px);
+    border-radius: 999px;
+    box-shadow: 0 4px 10px rgba(255, 20, 147, 0.35);
+    scroll-margin-top: calc(var(--header-h) + var(--barra-h) + 8px);
+}
+
+/* Cuadrícula de productos: en la última fila los productos quedan centrados */
+#catálogo .categoría{
+    --columnas: 3;
+    --espacio: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px var(--espacio);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+#catálogo .categoría > article{
+    flex: 0 0 calc((100% - (var(--columnas) - 1) * var(--espacio)) / var(--columnas));
+}
+@media (min-width: 560px){
+    #catálogo .categoría{ --columnas: 4; --espacio: 14px; gap: 20px var(--espacio); }
+}
+@media (min-width: 760px){
+    #catálogo .categoría{ --columnas: 5; }
+}
+@media (min-width: 960px){
+    #catálogo .categoría{ --columnas: 6; }
+}
+@media (min-width: 1180px){
+    #catálogo .categoría{ --columnas: 7; }
+}
+
+/* Tarjeta de cada producto */
+#catálogo article{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: white;
+    border: 2px solid #ffe0f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(255, 20, 147, 0.18);
+}
+
+/* Foto vertical que llena todo el recuadro. Si recorta mucho, prueba aspect-ratio: 4 / 5 */
+#catálogo .imagen img{
+    display: block; 
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4; 
+    object-fit: cover;
+    background-color: white;
+    border-radius: 14px 14px 0 0;
+}
+#catálogo article p{ 
+    flex: 1 0 auto;
+    min-height: 80px;
+    padding: 5px 5px 5px; 
+    text-align: center; 
+    color: #333;
+    font-size: 17px; 
+    line-height: 1.35; 
+}
+
+/* Precio de cada producto: abajo a la derecha, rosado y en negrita */
+/* Altura igual para todas las tarjetas (según el nombre más largo de cada tamaño) */
+@media (min-width: 560px){
+    #catálogo article p{
+        min-height: 80px;
+    }
+}
+@media (min-width: 960px){
+    #catálogo article p{
+        min-height: 70px;
+    }
+}
+@media (min-width: 1180px){
+    #catálogo article p{
+        min-height: 116px;
+    }
+}
+
+#catálogo .precio{
+    align-self: flex-end;
+    margin: auto 12px 12px 0;
+    color: deeppink;
+    font-size: 18px;
+    font-weight: bold;
+}
+@media (max-width: 560px){
+    #catálogo .precio{
+        font-size: 16px;
+        margin: 0 8px 10px 0;
+    }
+}
+
+@media (max-width: 560px){
+    #catálogo{ 
+        --barra-h: 86px; 
+    }
+    #catálogo .categorías{ 
+        gap: 8px; 
+        padding: 6px 8px; 
+    }
+    #catálogo .categorías a{ 
+        min-width: 80px; 
+        font-size: 11.5px; 
+    }
+    #catálogo .categorías img{ 
+        width: 30px; 
+        height: 30px; 
+    }
+    #catálogo article p{ 
+        padding: 6px 8px 10px; 
+        font-size: 15px; 
+    }
+}
+
+/* ---------- TIPS Y RECETAS ---------- */
+#Recetas{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: start;
+    padding-bottom: 20px;
+}
+
+/* Subtítulos "Tips" y "Recetas" (píldora rosa, igual que en Interacción) */
+#Recetas > h2{
+    grid-column: 1 / -1;
+    display: block;
+    width: fit-content;
+    max-width: calc(100% - 24px);
+    margin: 14px auto 0;
+    padding: 10px 28px;
+    background: linear-gradient(135deg, deeppink, #ff69b4);
+    color: white;
+    font-size: clamp(20px, 5.2vw, 28px);
+    border-radius: 999px;
+    box-shadow: 0 4px 10px rgba(255, 20, 147, 0.35);
+}
+
+/* Tips */
+#Recetas .tips{
+    width: min(92%, 1000px);
+    margin: 0 auto 40px;
+    padding: 18px clamp(10px, 3vw, 22px);
+    background: linear-gradient(160deg, #ffe0f0 0%, #ffffff 50%, #d9f3fb 100%);
+    border-radius: 24px;
+    box-shadow: 0 6px 18px rgba(255, 20, 147, 0.25);
+    h3{
+        text-align: center;
+        margin-bottom: 6px;
+        color: deeppink;
+    }
+    ul{
+        padding-left: 30px;
+        padding-right: 20px;
+        text-align: justify;
+        li{
+            margin-bottom: 6px;
+        }
+    }
+}
+
+.tip{
+    background-color: white;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    overflow: hidden;
+    transition: border-color .2s ease;
+    margin-bottom: 10px;
+}
+.tip[open]{
+    border-color: deeppink;
+}
+.tip summary{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    list-style: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: clamp(16px, 4.2vw, 20px);
+    user-select: none;
+    -webkit-user-select: none;
+}
+.tip summary::-webkit-details-marker{
+    display: none;
+}
+.tip summary:active{
+    background-color: #fff0f7;
+}
+.tips-texto{
+    flex: 1;
+    text-align: left;
+    line-height: 1.3;
+}
+/* El + se convierte en − cuando la pregunta está abierta */
+.tip summary::after{
+    content: "+";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: deeppink;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+}
+.tip[open] summary::after{
+    content: "\2212";
+}
+
+@keyframes tips-abrir{
+    from{ opacity: 0; transform: translateY(-6px); }
+    to{ opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: no-preference){
+    .tip[open] ul{
+        animation: tips-abrir .3s ease;
+    }
+}
+@media (hover: hover){
+    .tip summary:hover{
+        background-color: #fff0f7;
+    }
+}
+
+.carrusel-recetas{
+    max-width: 700px;
+    overflow: hidden;
+    border-radius: 50px;
+    margin: 20px auto 0;
+}
+
+.carrusel-recetas-contenedor{
+    display: flex;
+    width: 1000%;
+    animation: mover-carrusel-recetas 30s infinite ease-in-out;
+}
+.carrusel-recetas img, .carrusel-recetas a{
+    width: 10%;
+    height: clamp(350px, 40vw, min(560px, 40vh));
+    object-fit: cover;
+    transition: all .5s ease;
+    border-radius: 20px;
+}
+
+    @keyframes mover-carrusel-recetas {
+        0% { transform: translateX(0%); }
+        8% { transform: translateX(0%); }
+        10% { transform: translateX(-10%); }
+        18% { transform: translateX(-10%); }
+        20% { transform: translateX(-20%); }
+        28% { transform: translateX(-20%); }
+        30% { transform: translateX(-30%); }
+        38% { transform: translateX(-30%); }
+        40% { transform: translateX(-40%); }
+        48% { transform: translateX(-40%); }
+        50% { transform: translateX(-50%); }
+        58% { transform: translateX(-50%); }
+        60% { transform: translateX(-60%); }
+        68% { transform: translateX(-60%); }
+        70% { transform: translateX(-70%); }
+        78% { transform: translateX(-70%); }
+        80% { transform: translateX(-80%); }
+        88% { transform: translateX(-80%); }
+        90% { transform: translateX(-90%); }
+        98% { transform: translateX(-90%); }
+        100% { transform: translateX(0%); }
+    }
+
+/* Recetas: lista de tarjetas */
+.recetas-intro{
+    grid-column: 1 / -1;
+    margin: -6px 12px 0;
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+    font-size: clamp(15px, 4vw, 18px);
+}
+
+.receta-tarjeta img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.receta-tarjeta:active{
+    transform: scale(0.97);
+    border-color: deeppink;
+}
+@media (hover: hover){
+    .receta-tarjeta:hover{
+        transform: translateY(-5px);
+        border-color: deeppink;
+        box-shadow: 0 8px 16px rgba(255, 20, 147, 0.3);
+    }
+}
+
+/* Botones de descarga y de volver */
+.boton-descarga{
+    display: flex;
+    width: fit-content;
+    max-width: calc(100% - 24px);
+    min-height: 48px;
+    margin: 0 auto;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, deeppink, #ff69b4);
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 999px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    transition: transform .2s ease;
+}
+.boton-descarga:active{
+    transform: scale(0.96);
+}
+@media (hover: hover){
+    .boton-descarga:hover{
+        transform: translateY(-3px);
+    }
+}
+.boton-secundario{
+    display: block;
+    width: fit-content;
+    max-width: calc(100% - 24px);
+    margin: 22px auto 0;
+    padding: 11px 26px;
+    background-color: white;
+    border: 2px solid deeppink;
+    color: deeppink;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 999px;
+}
+.boton-secundario:active{
+    background-color: #fff0f7;
+}
+
+/* Página de cada receta */
+.receta-pagina{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 clamp(12px, 4vw, 30px) 10px;
+    h1{
+        text-align: center;
+    }
+}
+.migas{
+    margin-top: 14px;
+}
+.migas a{
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: rgba(255,255,255,0.8);
+    color: deeppink;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 999px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+}
+.receta-portada{
+    max-width: 500px;
+    margin: 6px auto 16px;
+    overflow: hidden;
+    border-radius: 22px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+.receta-portada img{
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background-color: #ffd1e8;
+}
+.receta-desc{
+    max-width: 700px;
+    margin: 0 auto 12px;
+    text-align: center;
+    font-size: clamp(16px, 4.2vw, 19px);
+}
+.receta-datos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.receta-datos span{
+    padding: 6px 14px;
+    background-color: #d9f3fb;
+    color: #00587a;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 999px;
+}
+
+.recetas-acciones, .receta-acciones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 600px;
+    margin: 20px auto;         
+}
+
+.recetas-acciones .mascota, .receta-acciones .mascota {
+    width: 120px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.receta-cuerpo{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: start;
+}
+@media (min-width: 900px){
+    .receta-cuerpo{
+        grid-template-columns: 1fr 1.7fr;
+    }
+}
+.receta-bloque{
+    padding: 18px clamp(14px, 3vw, 26px) 22px;
+    background-color: white;
+    border-top: 8px solid deeppink;
+    border-radius: 22px;
+    box-shadow: 0 6px 18px rgba(255, 20, 147, 0.25);
+}
+.receta-bloque h2{
+    margin: 0 0 10px;
+    padding: 0;
+    text-align: left;
+    color: deeppink;
+    font-size: clamp(22px, 5.5vw, 28px);
+}
+.receta-bloque h3{
+    margin: 14px 0 4px;
+    color: #00587a;
+    font-size: 17px;
+}
+.ingredientes{
+    list-style: none;
+}
+.ingredientes li{
+    position: relative;
+    padding: 8px 0 8px 26px;
+    border-bottom: 1px dashed #ffc2e0;
+}
+.ingredientes li:last-child{
+    border-bottom: 0;
+}
+.ingredientes li::before{
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: deeppink;
+}
+.pasos{
+    list-style: none;
+    counter-reset: paso;
+}
+.pasos li{
+    position: relative;
+    padding: 4px 0 18px 52px;
+    counter-increment: paso;
+}
+.pasos li::before{
+    content: counter(paso);
+    position: absolute;
+    left: 0;
+    top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, deeppink, #ff69b4);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 50%;
+}
+.pasos li strong{
+    color: #c4006f;
+}
+.receta-navegar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 26px;
+}
+.receta-vecina{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 12px 14px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    color: #333;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 1.25;
+    text-decoration: none;
+}
+.receta-vecina small{
+    color: deeppink;
+    font-size: 13px;
+}
+.receta-vecina.siguiente{
+    text-align: right;
+}
+
+/* ---------- INTERACCIÓN ---------- */
+/* Subtítulos llamativos (píldora rosa) */
+#comentarios h2.subtitulo{
+    display: block;
+    width: fit-content;
+    max-width: calc(100% - 24px);
+    margin: 14px auto 10px;
+    padding: 10px 28px;
+    background: linear-gradient(135deg, deeppink, #ff69b4);
+    color: white;
+    font-size: clamp(20px, 5.2vw, 28px);
+    border-radius: 999px;
+    box-shadow: 0 4px 10px rgba(255, 20, 147, 0.35);
+}
+.subtitulo-ayuda{
+    text-align: center;
+    margin: 0 12px 18px;
+    color: #555;
+    font-size: clamp(15px, 4vw, 18px);
+}
+
+/* Preguntas frecuentes: tarjetas que se despliegan al tocarlas */
+.faq{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: min(92%, 750px);
+    margin: 0 auto 40px;
+    padding: 18px clamp(10px, 3vw, 22px);
+    background: linear-gradient(160deg, #ffe0f0 0%, #ffffff 50%, #d9f3fb 100%);
+    border-radius: 24px;
+    box-shadow: 0 6px 18px rgba(255, 20, 147, 0.25);
+}
+.pregunta{
+    background-color: white;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    overflow: hidden;
+    transition: border-color .2s ease;
+}
+.pregunta[open]{
+    border-color: deeppink;
+}
+.pregunta summary{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    list-style: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: clamp(16px, 4.2vw, 20px);
+    user-select: none;
+    -webkit-user-select: none;
+}
+.pregunta summary::-webkit-details-marker{
+    display: none;
+}
+.pregunta summary:active{
+    background-color: #fff0f7;
+}
+.faq-texto{
+    flex: 1;
+    text-align: left;
+    line-height: 1.3;
+}
+/* El + se convierte en − cuando la pregunta está abierta */
+.pregunta summary::after{
+    content: "+";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: deeppink;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+}
+.pregunta[open] summary::after{
+    content: "\2212";
+}
+.pregunta p{
+    margin: 0 16px 16px;
+    padding-top: 12px;
+    border-top: 2px dashed #ffc2e0;
+    text-align: left;
+    color: #333;
+    font-size: clamp(15px, 4vw, 18px);
+}
+@keyframes faq-abrir{
+    from{ opacity: 0; transform: translateY(-6px); }
+    to{ opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: no-preference){
+    .pregunta[open] p{
+        animation: faq-abrir .3s ease;
+    }
+}
+@media (hover: hover){
+    .pregunta summary:hover{
+        background-color: #fff0f7;
+    }
+}
+
+/* Formulario de opinión */
+/* Mensaje de envío: solo se muestra cuando la página se abre con #enviado */
+.mensaje-enviado{
+    display: none;
+    width: min(92%, 620px);
+    margin: 0 auto 22px;
+    padding: 18px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #ffe0f0, #d9f3fb);
+    border: 2px solid deeppink;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(255, 20, 147, 0.25);
+    color: #333;
+}
+.mensaje-enviado:target{
+    display: block;
+}
+.mensaje-enviado .mensaje-titulo{
+    margin: 0 0 6px;
+    color: deeppink;
+    font-size: clamp(18px, 4.5vw, 22px);
+    font-weight: bold;
+}
+.mensaje-enviado p{
+    margin: 0 0 10px;
+}
+.mensaje-cerrar{
+    display: inline-block;
+    padding: 8px 22px;
+    background-color: deeppink;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 999px;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: min(92%, 620px);
+    margin: 0 auto 30px;
+    padding: 24px clamp(16px, 4vw, 30px) 28px;
+    background-color: white;
+    border-top: 8px solid deeppink;
+    border-radius: 24px;
+    box-shadow: 0 6px 18px rgba(255, 20, 147, 0.25);
+}
+.formulario label{
+    text-align: center;
+    font-size: clamp(18px, 4.5vw, 22px);
+    font-weight: bold;
+    color: deeppink;
+}
+.formulario textarea{
+    display: block;
+    width: 100%;
+    min-height: 140px;
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 16px;               /* 16px evita el zoom automático de iOS al escribir */
+    background-color: #fff8fc;
+    border: 2px solid #ffc2e0;
+    border-radius: 14px;
+    resize: vertical;
+}
+.formulario textarea::placeholder{
+    text-align: center;
+}
+.formulario textarea:focus{
+    background-color: white;
+    border-color: deeppink;
+}
+.formulario textarea:focus-visible{
+    outline: none;
+}
+.formulario button{
+    align-self: center;
+    min-height: 48px;
+    padding: 12px 34px;
+    background: linear-gradient(135deg, deeppink, #ff69b4);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 999px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    cursor: pointer;
+    transition: transform .2s ease;
+}
+.formulario button:active{
+    transform: scale(0.96);
+}
+@media (hover: hover){
+    .formulario button:hover{
+        transform: translateY(-3px);
+    }
+}
+
+/* ---------- CONTACTO ---------- */
+
+#contacto h1{
+    text-align: center;
+    margin: 30px auto 25px;
+    color: deeppink;
+    font-size: clamp(26px, 6.5vw, 40px);
+    padding: 0 15px;
+}
+.contacto-tarjeta{
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) 1.6fr;
+    gap: 24px;
+    width: min(94%, 980px);
+    margin: 10px auto 70px;
+    padding: 24px;
+    background-color: white;
+    border: 2px solid #ffc2e0;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(219, 27, 203, 0.18);
+}
+.contacto-datos h2{
+    text-align: left;
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+    padding: 0;
+    color: #333;
+}
+.contacto-datos h2:not(:first-child){ 
+    margin-top: 22px; 
+}
+.direccion{ 
+    font-size: 17px; 
+    line-height: 1.5; 
+    color: #333; 
+}
+.redes-botones{ 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+}
+.boton-red{
+    display: inline-flex; 
+    align-items: center; 
+    gap: 10px;
+    min-height: 48px;
+    padding: 6px 16px 6px 6px;
+    background-color: white;
+    color: #222;
+    font-size: 16px; 
+    font-weight: bold; 
+    text-decoration: none;
+    border: 2px solid deeppink;
+    border-radius: 999px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+}
+.boton-red img{ 
+    width: 36px; 
+    height: 36px; 
+    border-radius: 18px; 
+    object-fit: cover; 
+}
+.boton-red img:hover{ 
+    transform: none; 
+}
+.boton-red:active{ 
+    background-color: #ffe0f0; 
+}
+.boton-mapa{
+ margin-top: 12px; 
+}
+.mapa{
+    width: 100%; 
+    height: 100%; 
+    min-height: 340px;
+    border: 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+@media (hover: hover){
+    .boton-red{ 
+        transition: background-color .2s ease, color .2s ease, transform .2s ease; 
+    }
+    .boton-red:hover{ 
+        background-color: deeppink; 
+        color: white; 
+        transform: translateY(-2px); 
+    }
+}
+@media (max-width: 760px){
+    .contacto-tarjeta{ 
+        grid-template-columns: 1fr; 
+        gap: 18px; 
+        padding: 16px; 
+        border-radius: 20px; 
+    }
+    .redes-botones .boton-red, .boton-mapa{ 
+        flex: 1 1 140px; 
+        justify-content: center; 
+    }
+    .boton-mapa{ 
+        width: 100%; 
+    }
+    .mapa{ 
+        min-height: 0; 
+        height: 300px; 
+    }
+}
+
+@media (max-width: 760px){
+    .redes-botones h2{
+        flex: 0 0 100%;
+        margin: 4px 0;
+        text-align: center;
+    }
+    .redes-botones h2 ~ .boton-red{
+        flex: 0 1 auto;
+        margin: 0 auto;
+    }
+    .contacto-datos h2{
+    text-align: center;
+    }
+}
+
+/* ---------- ENLACES CON IMAGEN ---------- */
+a img{ 
+    cursor: pointer; 
+}
+a img:active{ 
+    transform: scale(1); 
+}
+/* Los efectos "hover" solo en dispositivos con mouse (en pantallas táctiles se quedaban pegados) */
+@media (hover: hover){
+    a img{ 
+        transition: transform 0.3s ease; 
+    }
+    a img:hover{ 
+        transform: scale(1.1); 
+    }
+}
+
+/* ---------- FOOTER ROSA ---------- */
+footer{
+    position: relative;
+    margin-top: 20px;
+    padding: 14px 16px 12px;
+    background-color: deeppink;
+    color: white;
+    font-size: 15px;
+    line-height: 1.4;
+}
+/* Logo, redes, desarrolladores y tutores: la misma distancia entre cada bloque */
+footer .footer-contenido{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 18px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+footer .footer-equipo{
+    display: contents;
+}
+footer .footer-marca{
+    align-self: center;
+    text-align: center;
+}
+footer .footer-marca img{
+    display: block;
+    width: 120px;
+    height: auto;
+    margin: 0 auto;
+}
+footer .footer-marca p{
+    margin: 6px 0 0;
+    font-size: 14px;
+}
+footer .footer-bloque{
+    text-align: left;
+    font-size: 14px;
+}
+footer .footer-bloque p{
+    margin: 0;
+}
+footer .footer-titulo{
+    display: block;
+    margin-bottom: 8px;
+    color: #d9f3fb;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+/* Redes: icono y nombre; los tres iconos ocupan el mismo cuadro y no se deforman */
+footer .footer-redes{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+footer .footer-redes a{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+}
+footer .footer-redes img{
+    display: block;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+}
+footer .derechos{
+    max-width: 1100px;
+    margin: 14px auto 0;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+/* Tablet y celular: bloques centrados, uno debajo de otro */
+@media (max-width: 900px){
+    footer .footer-contenido{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 22px 28px;
+        text-align: center;
+    }
+    footer .footer-marca{
+        flex-basis: 100%;
+    }
+    footer .footer-bloque{
+        flex: 0 1 240px;
+        text-align: center;
+    }
+    footer .footer-redes{
+        display: inline-flex;
+        align-items: flex-start;
+        gap: 6px;
+    }
+    footer .derechos{
+        font-size: 12px;
+    }
+}
+@media (max-width: 560px){
+    footer{
+        padding: 10px 12px;
+    }
+    footer .footer-contenido{
+        gap: 12px 20px;
+    }
+    footer .footer-marca img{
+        width: 90px;
+    }
+    footer .footer-bloque{
+        flex-basis: 100%;
+    }
+    footer .footer-titulo{
+        margin-bottom: 4px;
+    }
+    footer .footer-redes{
+        gap: 4px;
+    }
+    footer .volver-arriba{
+        margin-top: 12px;
+    }
+    footer .derechos{
+        margin-top: 10px;
+    }
+}
+
+/* ---------- BOTÓN VOLVER ARRIBA ---------- */
+/* En PC va abajo, a la izquierda del borde derecho (no pegado a la orilla) */
+.volver-arriba{
+    float: right;
+    width: fit-content;
+    margin: 25px 0 0;
+    padding: 5px 14px;
+    background-color: white;
+    color: #c4006f;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 999px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    transition: transform .2s ease, background-color .2s ease;
+}
+.volver-arriba:active{
+    transform: scale(0.95);
+}
+@media (hover: hover){
+    .volver-arriba:hover{
+        transform: translateY(-2px);
+        background-color: #d9f3fb;
+    }
+}
+@media (max-width: 900px){
+    .volver-arriba{
+        position: static;
+        display: block;
+        width: fit-content;
+        margin: 10px auto 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    html{ 
+        scroll-behavior: auto; 
+    }
+    *{ 
+        transition: none !important; 
+    }
+}
